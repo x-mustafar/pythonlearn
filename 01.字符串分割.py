@@ -21,9 +21,10 @@ abc00000
 
 while True:
     try:
-        str = input()
-        estr = str + "0"*(8-len(str)%8)
-        for i in range(len(estr)//8):
-            print(estr[i*8:(i+1)*8])
+        str = input().strip()
+        if len(str)%8 != 0:
+            str = str + "0"*(8-len(str)%8)
+        for i in range(len(str)//8):
+            print(str[i*8:(i+1)*8])
     except:
         break
